@@ -14,9 +14,9 @@ const TwitterBot = new Twit(config.twitterKeys)
 
 const retweet = () => {
   const params = {
-    q: config.query,
-    result_type: config.result_type,
-    lang: config.lang
+    q: config.twitterConfig.queryString,
+    result_type: config.twitterConfig.result_type,
+    lang: config.twitterConfig.lang
   }
   TwitterBot.get('search/tweets', params, (err, data) => {
     // when no errors
